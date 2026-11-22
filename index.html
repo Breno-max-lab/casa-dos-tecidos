@@ -230,16 +230,6 @@
                         <span id="cart-badge" class="bg-pureWhite text-crimsonPrimary font-bold text-xs px-2 py-0.5 rounded-full">0</span>
                     </button>
 
-                    <!-- Atalho Rápido Painel Admin -->
-                    <button
-                        onclick="openAdminGate()"
-                        title="Acesso Rápido Painel Admin"
-                        aria-label="Acesso Rápido Painel Admin"
-                        class="p-2.5 rounded-full border border-neutralBorder text-mutedSlate hover:text-crimsonPrimary hover:border-crimsonPrimary transition-colors"
-                    >
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" /></svg>
-                    </button>
-
                     <!-- Botão Menu Mobile -->
                     <button
                         onclick="toggleMobileMenu()"
@@ -782,10 +772,6 @@
             </div>
             <div class="flex flex-wrap items-center justify-center gap-4 text-xs text-mutedSlate">
                 <span>&copy; 2026 Casa dos Tecidos (<span id="footer-insta-text">@casadostecidos_juruti</span>). Todos os direitos reservados.</span>
-                <button onclick="openAdminGate()" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-pureWhite border border-neutralBorder text-charcoal hover:border-crimsonPrimary hover:text-crimsonPrimary font-semibold transition-colors">
-                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" /></svg>
-                    <span>Área Admin</span>
-                </button>
             </div>
         </div>
     </footer>
@@ -1059,229 +1045,20 @@
                                 </button>
                             </div>
                         </div>
-                    </div>
 
-                    <form onsubmit="saveAdminHeroSettings(event)" class="space-y-4 bg-softSurface p-5 rounded-2xl border border-neutralBorder">
-                        <h4 class="font-serif text-lg font-bold text-inkBlack">Textos da Faixa Superior &amp; Seção Principal</h4>
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div class="md:col-span-2 pt-3 border-t border-neutralBorder flex flex-wrap items-center justify-between gap-3">
                             <div>
-                                <label class="block font-bold text-inkBlack mb-1">Faixa Vermelha do Topo</label>
-                                <input id="admin-hero-announcement" type="text" class="w-full px-3.5 py-2 rounded-xl bg-pureWhite border border-neutralBorder" />
+                                <h4 class="font-serif text-base font-bold text-inkBlack">Avatar do Assistente Virtual ("Carretel")</h4>
+                                <p class="text-mutedSlate">Personalize a imagem do mascote exibida no chat de atendimento.</p>
                             </div>
-                            <div>
-                                <label class="block font-bold text-inkBlack mb-1">Selo Acima do Título</label>
-                                <input id="admin-hero-badge" type="text" class="w-full px-3.5 py-2 rounded-xl bg-pureWhite border border-neutralBorder" />
-                            </div>
-                        </div>
-                        <div>
-                            <label class="block font-bold text-inkBlack mb-1">Título Principal (use &lt;span class="italic text-crimsonPrimary"&gt;palavra&lt;/span&gt; para destaque)</label>
-                            <input id="admin-hero-title" type="text" class="w-full px-3.5 py-2 rounded-xl bg-pureWhite border border-neutralBorder" />
-                        </div>
-                        <div>
-                            <label class="block font-bold text-inkBlack mb-1">Subtítulo / Apresentação</label>
-                            <textarea id="admin-hero-subtitle" rows="2" class="w-full px-3.5 py-2 rounded-xl bg-pureWhite border border-neutralBorder"></textarea>
-                        </div>
-                        <div class="grid grid-cols-1 sm:grid-cols-4 gap-3">
-                            <div>
-                                <label class="block font-bold text-inkBlack mb-1">Selo 1 (Número)</label>
-                                <input id="admin-seal1-badge" type="text" class="w-full px-3 py-2 rounded-xl bg-pureWhite border border-neutralBorder" />
-                            </div>
-                            <div>
-                                <label class="block font-bold text-inkBlack mb-1">Selo 1 (Texto)</label>
-                                <input id="admin-seal1-text" type="text" class="w-full px-3 py-2 rounded-xl bg-pureWhite border border-neutralBorder" />
-                            </div>
-                            <div>
-                                <label class="block font-bold text-inkBlack mb-1">Selo 2 (Texto)</label>
-                                <input id="admin-seal2-text" type="text" class="w-full px-3 py-2 rounded-xl bg-pureWhite border border-neutralBorder" />
-                            </div>
-                            <div>
-                                <label class="block font-bold text-inkBlack mb-1">Selo 3 (Texto)</label>
-                                <input id="admin-seal3-text" type="text" class="w-full px-3 py-2 rounded-xl bg-pureWhite border border-neutralBorder" />
-                            </div>
-                        </div>
-                        <div class="flex justify-end pt-2">
-                            <button type="submit" class="px-6 py-2.5 rounded-full bg-crimsonPrimary hover:bg-crimsonDark text-pureWhite font-bold shadow-crimson">
-                                Salvar Alterações do Topo
-                            </button>
-                        </div>
-                    </form>
-                </div>
-
-                <!-- ABA 4: SOBRE NÓS & DIFERENCIAIS -->
-                <div id="admin-panel-diferenciais" class="hidden space-y-5 text-xs">
-                    <form onsubmit="saveAdminAboutSettings(event)" class="space-y-4 bg-softSurface p-5 rounded-2xl border border-neutralBorder">
-                        <h3 class="font-serif text-xl font-bold text-inkBlack">Editar Seção "Por que escolher a Casa dos Tecidos?"</h3>
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                            <div>
-                                <label class="block font-bold text-inkBlack mb-1">Título da Seção</label>
-                                <input id="admin-about-title" type="text" class="w-full px-3.5 py-2 rounded-xl bg-pureWhite border border-neutralBorder" />
-                            </div>
-                            <div>
-                                <label class="block font-bold text-inkBlack mb-1">Subtítulo</label>
-                                <input id="admin-about-subtitle" type="text" class="w-full px-3.5 py-2 rounded-xl bg-pureWhite border border-neutralBorder" />
-                            </div>
-                        </div>
-                        <div id="admin-pillars-inputs" class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
-                            <!-- 4 cards editáveis gerados via JS -->
-                        </div>
-                        <div class="flex justify-end pt-2">
-                            <button type="submit" class="px-6 py-2.5 rounded-full bg-crimsonPrimary hover:bg-crimsonDark text-pureWhite font-bold shadow-crimson">
-                                Salvar Diferenciais
-                            </button>
-                        </div>
-                    </form>
-                </div>
-
-                <!-- ABA 5: TAXAS DE ENTREGA LOCAL & FRETE REGIONAL / FLUVIAL -->
-                <div id="admin-panel-fretes" class="hidden space-y-5 text-xs">
-                    <form onsubmit="saveAdminShippingSettings(event)" class="space-y-5 bg-softSurface p-6 rounded-2xl border border-neutralBorder">
-                        <div>
-                            <h3 class="font-serif text-xl font-bold text-inkBlack">Tabela de Entrega Local &amp; Frete para Outras Cidades</h3>
-                            <p class="text-mutedSlate mt-0.5">Configure os valores usados na calculadora automática dentro do carrinho de orçamento.</p>
-                        </div>
-
-                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                            <div>
-                                <label class="block font-bold text-inkBlack mb-1">Entrega Local — Centro / Próximo (R$)</label>
-                                <input id="admin-ship-local-center" type="number" step="0.50" min="0" required class="w-full px-3.5 py-2 rounded-xl bg-pureWhite border border-neutralBorder" />
-                            </div>
-                            <div>
-                                <label class="block font-bold text-inkBlack mb-1">Entrega Local — Demais Bairros (R$)</label>
-                                <input id="admin-ship-local-neighborhood" type="number" step="0.50" min="0" required class="w-full px-3.5 py-2 rounded-xl bg-pureWhite border border-neutralBorder" />
-                            </div>
-                            <div>
-                                <label class="block font-bold text-inkBlack mb-1">Entrega Local Grátis acima de (R$)</label>
-                                <input id="admin-ship-free-min" type="number" step="1" min="0" required class="w-full px-3.5 py-2 rounded-xl bg-pureWhite border border-neutralBorder" />
-                            </div>
-                        </div>
-
-                        <div class="pt-3 border-t border-neutralBorder space-y-3">
-                            <div class="flex items-center justify-between">
-                                <label class="font-bold text-inkBlack">Tarifas por Cidade Vizinha / Envio Fluvial (Formato: <code class="text-crimsonPrimary">Cidade:ValorBase</code> por linha)</label>
-                            </div>
-                            <textarea id="admin-ship-cities-table" rows="6" class="w-full px-3.5 py-2.5 rounded-xl bg-pureWhite border border-neutralBorder font-mono text-xs leading-relaxed"></textarea>
-                            <p class="text-[11px] text-mutedSlate">Dica: Para pedidos volumosos acima de 10m, o sistema adiciona automaticamente uma taxa extra de volume (+R$ 10,00) para encomendas fluviais.</p>
-                        </div>
-
-                        <div class="flex justify-end pt-2">
-                            <button type="submit" class="px-6 py-2.5 rounded-full bg-crimsonPrimary hover:bg-crimsonDark text-pureWhite font-bold shadow-crimson">
-                                Salvar Tabela de Fretes
-                            </button>
-                        </div>
-                    </form>
-                </div>
-
-                <!-- ABA 6: CONTATO, WHATSAPP & SENHA -->
-                <div id="admin-panel-contato" class="hidden space-y-5 text-xs">
-                    <form onsubmit="saveAdminContactSettings(event)" class="space-y-4 bg-softSurface p-5 rounded-2xl border border-neutralBorder">
-                        <h3 class="font-serif text-xl font-bold text-inkBlack">Dados Oficiais da Loja, WhatsApp &amp; Segurança</h3>
-                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                            <div>
-                                <label class="block font-bold text-inkBlack mb-1">Número WhatsApp (somente dígitos c/ DDI 55)</label>
-                                <input id="admin-contact-whatsapp" type="text" required placeholder="5593991609461" class="w-full px-3.5 py-2 rounded-xl bg-pureWhite border border-neutralBorder" />
-                            </div>
-                            <div>
-                                <label class="block font-bold text-inkBlack mb-1">Telefone Exibido no Site</label>
-                                <input id="admin-contact-phone-display" type="text" required class="w-full px-3.5 py-2 rounded-xl bg-pureWhite border border-neutralBorder" />
-                            </div>
-                            <div>
-                                <label class="block font-bold text-inkBlack mb-1">Instagram (@)</label>
-                                <input id="admin-contact-instagram" type="text" required class="w-full px-3.5 py-2 rounded-xl bg-pureWhite border border-neutralBorder" />
-                            </div>
-                        </div>
-
-                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                            <div>
-                                <label class="block font-bold text-inkBlack mb-1">Endereço Completo</label>
-                                <input id="admin-contact-address" type="text" required class="w-full px-3.5 py-2 rounded-xl bg-pureWhite border border-neutralBorder" />
-                            </div>
-                            <div>
-                                <label class="block font-bold text-inkBlack mb-1">Horário de Funcionamento</label>
-                                <input id="admin-contact-hours" type="text" required class="w-full px-3.5 py-2 rounded-xl bg-pureWhite border border-neutralBorder" />
-                            </div>
-                            <div>
-                                <label class="block font-bold text-inkBlack mb-1">Entregas &amp; Parcerias</label>
-                                <input id="admin-contact-shipping" type="text" required class="w-full px-3.5 py-2 rounded-xl bg-pureWhite border border-neutralBorder" />
-                            </div>
-                        </div>
-
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                            <div>
-                                <label class="block font-bold text-inkBlack mb-1">Título Bloco Contato</label>
-                                <input id="admin-contact-title" type="text" class="w-full px-3.5 py-2 rounded-xl bg-pureWhite border border-neutralBorder" />
-                            </div>
-                            <div>
-                                <label class="block font-bold text-inkBlack mb-1">Nova Senha do Painel Admin (deixe em branco para manter)</label>
-                                <input id="admin-new-password" type="password" placeholder="Nova senha..." class="w-full px-3.5 py-2 rounded-xl bg-pureWhite border border-neutralBorder" />
-                            </div>
-                        </div>
-
-                        <div>
-                            <label class="block font-bold text-inkBlack mb-1">Texto de Apoio Bloco Contato</label>
-                            <textarea id="admin-contact-desc" rows="2" class="w-full px-3.5 py-2 rounded-xl bg-pureWhite border border-neutralBorder"></textarea>
-                        </div>
-
-                        <div class="flex flex-wrap items-center justify-between gap-4 pt-3 border-t border-neutralBorder">
-                            <button type="button" onclick="resetAllCmsToDefault()" class="px-4 py-2 rounded-full border border-crimsonPrimary text-crimsonPrimary font-bold hover:bg-crimsonLight">
-                                Restaurar Dados Originais de Fábrica
-                            </button>
-                            <button type="submit" class="px-6 py-2.5 rounded-full bg-crimsonPrimary hover:bg-crimsonDark text-pureWhite font-bold shadow-crimson">
-                                Salvar Configurações da Loja
-                            </button>
-                        </div>
-                    </form>
-                </div>
-
-                <!-- ABA 7: GERADOR DE QR CODE & LINKS DIRETO PARA BIO / BALCÃO -->
-                <div id="admin-panel-qrcode" class="hidden space-y-6 text-xs">
-                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 bg-softSurface p-6 rounded-2xl border border-neutralBorder items-center">
-                        <div class="lg:col-span-7 space-y-4">
-                            <div>
-                                <span class="inline-block px-2.5 py-0.5 rounded-full bg-crimsonLight text-crimsonPrimary text-[10px] font-bold uppercase tracking-wider">Divulgação &amp; Balcão</span>
-                                <h3 class="font-serif text-xl font-bold text-inkBlack mt-1">Gerador de QR Code &amp; Links para Bio do Instagram</h3>
-                                <p class="text-mutedSlate mt-1">Crie links diretos para o catálogo completo ou já filtrados em uma categoria específica e baixe o QR Code pronto para imprimir no balcão ou nas encomendas.</p>
-                            </div>
-
-                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                                <div>
-                                    <label class="block font-bold text-inkBlack mb-1">URL Base do Site Publicado</label>
-                                    <input id="admin-qr-base-url" type="url" oninput="updateQrCodeGenerator()" placeholder="https://casadostecidosjuruti.vercel.app" class="w-full px-3.5 py-2.5 rounded-xl bg-pureWhite border border-neutralBorder" />
-                                </div>
-                                <div>
-                                    <label class="block font-bold text-inkBlack mb-1">Destino / Filtro Inicial</label>
-                                    <select id="admin-qr-category" onchange="updateQrCodeGenerator()" class="w-full px-3.5 py-2.5 rounded-xl bg-pureWhite border border-neutralBorder font-semibold">
-                                        <!-- Preenchido via JS -->
-                                    </select>
-                                </div>
-                            </div>
-
-                            <div>
-                                <label class="block font-bold text-inkBlack mb-1">Link Direto Gerado (pronto para colar na Bio do Instagram)</label>
-                                <div class="flex items-center gap-2">
-                                    <input id="admin-qr-generated-link" type="text" readonly class="flex-1 px-3.5 py-2.5 rounded-xl bg-pureWhite border border-neutralBorder font-mono text-[11px] text-charcoal" />
-                                    <button type="button" onclick="copyGeneratedBioLink()" class="px-4 py-2.5 rounded-xl bg-crimsonPrimary hover:bg-crimsonDark text-pureWhite font-bold shrink-0">
-                                        Copiar Link
-                                    </button>
-                                </div>
-                            </div>
-
-                            <div class="flex flex-wrap items-center gap-3 pt-1">
-                                <button type="button" onclick="downloadQrCodePng()" class="px-5 py-2.5 rounded-full bg-inkBlack hover:bg-charcoal text-pureWhite font-bold shadow-xs">
-                                    Baixar QR Code (PNG)
+                            <div class="flex flex-wrap items-center gap-2.5">
+                                <label class="cursor-pointer px-4 py-2 rounded-full bg-crimsonPrimary text-pureWhite font-bold hover:bg-crimsonDark">
+                                    Enviar Foto do Mascote
+                                    <input type="file" accept="image/*" class="hidden" onchange="handleCustomMascotUpload(event)" />
+                                </label>
+                                <button type="button" onclick="resetCustomMascot()" class="px-4 py-2 rounded-full bg-pureWhite border border-neutralBorder text-charcoal font-bold hover:border-crimsonPrimary">
+                                    Restaurar Mascote Padrão
                                 </button>
-                                <button type="button" onclick="printStoreCounterSign()" class="px-5 py-2.5 rounded-full bg-pureWhite border border-crimsonPrimary text-crimsonPrimary hover:bg-crimsonLight font-bold">
-                                    Imprimir Placa de Balcão
-                                </button>
-                            </div>
-                        </div>
-
-                        <div class="lg:col-span-5 flex flex-col items-center justify-center bg-pureWhite p-6 rounded-2xl border border-neutralBorder text-center space-y-3">
-                            <div class="p-3 rounded-2xl border-2 border-crimsonPrimary/25 bg-pureWhite shadow-xs">
-                                <canvas id="admin-qr-canvas" width="210" height="210" class="block mx-auto"></canvas>
-                            </div>
-                            <div>
-                                <p class="font-serif font-bold text-sm text-inkBlack">Casa dos Tecidos</p>
-                                <p id="admin-qr-caption" class="text-[11px] text-mutedSlate">Aponte a câmera para acessar o catálogo</p>
                             </div>
                         </div>
                     </div>
@@ -1595,10 +1372,6 @@
                 </div>
 
                 <div class="flex items-center gap-1">
-                    <label title="Usar imagem própria do mascote" class="cursor-pointer w-8 h-8 rounded-full bg-pureWhite/15 hover:bg-pureWhite/25 flex items-center justify-center transition-colors">
-                        <svg class="w-3.5 h-3.5 text-pureWhite" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
-                        <input type="file" accept="image/*" class="hidden" onchange="handleCustomMascotUpload(event)" />
-                    </label>
                     <button onclick="toggleAssistantChat(false)" class="w-8 h-8 rounded-full bg-pureWhite/15 hover:bg-pureWhite/25 text-pureWhite flex items-center justify-center transition-colors" aria-label="Minimizar assistente">
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
                     </button>
@@ -2075,6 +1848,23 @@
             calculateYardage();
             updateCartUI();
             setupSearchListeners();
+            checkDirectAdminRoute();
+        });
+
+        function checkDirectAdminRoute() {
+            const hash = (window.location.hash || '').toLowerCase();
+            const params = new URLSearchParams(window.location.search);
+            if (hash === '#admin' || params.get('admin') === '1') {
+                openAdminGate();
+            }
+        }
+
+        window.addEventListener('hashchange', checkDirectAdminRoute);
+        window.addEventListener('keydown', (e) => {
+            if (e.ctrlKey && e.shiftKey && e.key.toLowerCase() === 'a') {
+                e.preventDefault();
+                openAdminGate();
+            }
         });
 
         function applyUrlInitialFilter() {
@@ -2273,6 +2063,13 @@
                 }
             };
             reader.readAsDataURL(file);
+        }
+
+        function resetCustomMascot() {
+            localStorage.removeItem('casa_dos_tecidos_mascote_dataurl');
+            document.querySelectorAll('.mascot-img').forEach(img => img.classList.add('hidden'));
+            document.querySelectorAll('.mascot-svg').forEach(el => el.classList.remove('hidden'));
+            showToast('Mascote padrão restaurado!');
         }
 
         // 3.2 MALHA TÊXTIL ANIMADA SUAVE E TRANSLÚCIDA NO HERO
